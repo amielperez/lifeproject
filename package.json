@@ -1,0 +1,32 @@
+{
+  "name": "shiken",
+  "version": "1.0.0",
+  "description": "試験のために計画です。",
+  "main": "gulfpile.js",
+  "scripts": {
+    "start": "gulp dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amielperez/shiken.git"
+  },
+  "author": "Amiel L Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amielperez/shiken/issues"
+  },
+  "homepage": "https://github.com/amielperez/shiken#readme",
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-browserify": "latest",
+    "gulp-embedlr": "latest",
+    "gulp-util": "latest",
+    "gulp-livereload": "latest",
+    "express": "latest",
+    "tiny-lr": "latest",
+    "connect-livereload": "latest",
+    "browserify": "latest",
+    "angular": "latest"
+  }
+}
