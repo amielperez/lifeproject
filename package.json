@@ -1,5 +1,5 @@
 {
-  "name": "shiken",
+  "name": "driven",
   "version": "1.0.0",
   "description": "試験のために計画です。",
   "main": "gulfpile.js",
@@ -9,24 +9,35 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amielperez/shiken.git"
+    "url": "git+https://github.com/amielperez/driven.git"
   },
   "author": "Amiel L Perez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amielperez/shiken/issues"
+    "url": "https://github.com/amielperez/driven/issues"
   },
-  "homepage": "https://github.com/amielperez/shiken#readme",
+  "homepage": "https://github.com/amielperez/driven#readme",
   "dependencies": {
+    "angular": "latest",
+    "angular-environment": "^1.0.8",
+    "angular-ui-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "browserify": "latest",
+    "connect-livereload": "latest",
+    "express": "latest",
     "gulp": "latest",
     "gulp-browserify": "latest",
+    "gulp-concat": "^2.6.1",
     "gulp-embedlr": "latest",
-    "gulp-util": "latest",
+    "gulp-eslint": "^3.0.1",
     "gulp-livereload": "latest",
-    "express": "latest",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "latest",
+    "rsvp": "^3.5.0",
     "tiny-lr": "latest",
-    "connect-livereload": "latest",
-    "browserify": "latest",
-    "angular": "latest"
-  }
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "eslintConfig": "eslint.json"
 }

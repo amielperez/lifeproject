@@ -1,0 +1,16 @@
+<div>
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="Default project">
+      <div class="row dashboard-lanes">
+        <div class="col-sm-4 dashboard-lane">
+          <h1 style="{color:red}">{{ message }}</h1>
+          <task model='task' ng-repeat="task in tasks"></task>
+        </div>
+        <div class="col-sm-4 dashboard-lane">
+        </div>
+        <div class="col-sm-4 dashboard-lane">
+        </div>
+      </div>
+    </uib-tab>
+  </uib>
+</div>

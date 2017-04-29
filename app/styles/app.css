@@ -1,0 +1,8 @@
+.dashboard-lanes {
+  height: 100%;
+}
+
+.dashboard-lane {
+  border: 1px solid grey;
+  height: 100%
+}
