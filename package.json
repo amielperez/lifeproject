@@ -20,6 +20,7 @@
   "dependencies": {
     "angular": "latest",
     "angular-environment": "^1.0.8",
+    "angular-resource": "^1.6.4",
     "angular-ui-bootstrap": "^2.5.0",
     "bootstrap": "^3.3.7",
     "browserify": "latest",

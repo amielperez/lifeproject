@@ -2,7 +2,8 @@
 
 var navbar = () => {
   return {
-    templateUrl: '/assets/html/common/navbar/navbar.tmpl.html'
+    templateUrl: '/assets/html/common/navbar/navbar.tmpl.html',
+    controller: 'navbarCtrl'
   }
 }
 

@@ -3,7 +3,7 @@
 var task = () => {
   return {
     scope: {
-      model: '='
+      vm: '='
     },
     templateUrl: '/assets/html/common/task/task.tmpl.html'
   }

@@ -37,7 +37,7 @@ gulp.task('watch', ['lint'], () => {
   );
 
   gulp.watch(
-    ['app/common/*.js', 'app/features/**/*.js', 'app/config/*.js', 'app/*.js'],
+    ['app/common/**/*.js', 'app/features/**/*.js', 'app/config/*.js', 'app/*.js'],
     ['lint', 'bundle']
   );
 
