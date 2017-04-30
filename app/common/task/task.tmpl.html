@@ -1,10 +1,18 @@
 <div class="task-card">
   <div class="body">
-    <div>{{ vm.summary }}</div>
+    <span>{{ vm.summary }}</span>
+    <span class="glyphicon glyphicon-check" ng-if="highlightCompletion"></span>
   </div>
   <div class="footer row-flex">
-    <span class="glyphicon glyphicon-chevron-left action" ng-show="canBacktrack"></span>
-    <span class="glyphicon glyphicon-trash action"></span>
-    <span class="glyphicon glyphicon-chevron-right action" ng-show"canProgress"></span>
+    <!-- TODO: apply Jason's advice of preventing default via CSS -->
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onBacktrack(vm)">
+      <span class="glyphicon glyphicon-chevron-left" ng-if="canBacktrack"></span>
+    </a>
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onDelete(vm)">
+      <span class="glyphicon glyphicon-trash" ng-if="canDelete"></span>
+    </a>
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onProgress(vm)">
+      <span class="glyphicon glyphicon-chevron-right" ng-if="canProgress"></span>
+    </a>
   </div>
 </div>

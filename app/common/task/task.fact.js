@@ -8,6 +8,9 @@ var taskFactory = ($resource, envService) => {
       query: {
         method: 'GET',
         isArray: true
+      },
+      update: {
+        method: 'PUT'
       }
     }
   );

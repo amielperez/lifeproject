@@ -7,6 +7,7 @@ var dashboard = require('../features/dashboard/dashboard.dir')
 
 var task = require('../common/task/task.dir')
 var taskFactory = require('../common/task/task.fact')
+var taskCtrl = require('../common/task/task.ctrl')
 
 var navbar = require('../common/navbar/navbar.dir')
 var navbarCtrl = require('../common/navbar/navbar.ctrl')
@@ -18,10 +19,13 @@ var projectFactory = require('../common/project/project.fact')
 var projectBoardCtrl = require('../common/project/projectBoard.ctrl')
 var projectBoard = require('../common/project/projectBoard.dir')
 
+var addProject = require('../features/add-project/addProject.dir')
+var addProjectCtrl = require('../features/add-project/addProject.ctrl')
+
 // TODO: checkout gulp-ng-annotate and this article https://github.com/mgol/grunt-ng-annotate
 // TODO: to DRY up these injections
 var registerToApp = (app) => {
-  app.controller('dashboardCtrl', ['$scope', '$rootScope', 'envService', 'projectFactory', dashboardCtrl])
+  app.controller('dashboardCtrl', ['$scope', '$rootScope', '$uibModal', 'envService', 'projectFactory', dashboardCtrl])
   app.directive('dashboard', [dashboard])
   app.directive('task', [task])
   app.directive('navbar', [navbar])
@@ -32,6 +36,9 @@ var registerToApp = (app) => {
   app.factory('projectFactory', ['$resource', 'envService', projectFactory])
   app.controller('projectBoardCtrl', ['$scope', '$rootScope', '$uibModal', 'taskFactory', projectBoardCtrl])
   app.directive('projectBoard', [projectBoard])
+  app.controller('taskCtrl', ['$scope', taskCtrl])
+  app.directive('addProject', [addProject])
+  app.controller('addProjectCtrl', ['$scope', 'projectFactory', addProjectCtrl])
 }
 
 module.exports = registerToApp;

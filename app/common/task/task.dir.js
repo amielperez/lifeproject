@@ -5,7 +5,8 @@ var task = () => {
     scope: {
       vm: '='
     },
-    templateUrl: '/assets/html/common/task/task.tmpl.html'
+    templateUrl: '/assets/html/common/task/task.tmpl.html',
+    controller: 'taskCtrl'
   }
 }
 

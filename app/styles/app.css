@@ -14,6 +14,10 @@
   height: 100%
 }
 
+.modal-form {
+  margin: 15px;
+}
+
 .task-card {
   border: 1px solid DimGray;
   border-radius: 5px;

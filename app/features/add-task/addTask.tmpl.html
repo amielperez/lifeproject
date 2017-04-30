@@ -1,18 +1,20 @@
-<form ng-submit="addTask()">
-    <h3>Add a Task</h3>
-    <div class="form-group">
-        <label for="projectName" class="control-label">Project</label>
-        <div>
-            <p class="form-control-static">{{ vmproject.name }}</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="summary" col-xs-2>Summary</label>
-        <input type="summary" class="form-control" id="summary" placeholder="Summary" ng-model="vm.summary">
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea class="form-control" rows="5" id="comment" ng-model="vm.description"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
+<div class="add-task-form">
+  <form ng-submit="saveTask()">
+      <h3>Add a Task</h3>
+      <div class="form-group">
+          <label for="projectName" class="control-label">Project</label>
+          <div>
+              <p class="form-control-static">{{ vmproject.name }}</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="summary" col-xs-2>Summary</label>
+          <input type="text" class="form-control" id="summary" placeholder="Summary" ng-model="vm.summary">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" rows="5" id="comment" ng-model="vm.description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
