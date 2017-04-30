@@ -1,7 +1,13 @@
 <form ng-submit="addTask()">
     <h3>Add a Task</h3>
     <div class="form-group">
-        <label for="summary">Summary</label>
+        <label for="projectName" class="control-label">Project</label>
+        <div>
+            <p class="form-control-static">{{ vmproject.name }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="summary" col-xs-2>Summary</label>
         <input type="summary" class="form-control" id="summary" placeholder="Summary" ng-model="vm.summary">
     </div>
     <div class="form-group">

@@ -5,7 +5,8 @@ var addTask = () => {
     templateUrl: '/assets/html/features/add-task/addTask.tmpl.html',
     controller: 'addTaskCtrl',
     scope: {
-      vm: '='
+      vm: '=',
+      vmproject: '='
     }
   }
 }

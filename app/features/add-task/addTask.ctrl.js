@@ -1,9 +1,10 @@
 'use strict';
 
 var addTaskCtrl = ($scope, $rootScope, taskFactory) => {
+  $scope.vm['project_id'] = $scope.vmproject.id
   $scope.addTask = () => {
     taskFactory.save($scope.vm, () => {
-      $rootScope.$broadcast('task:added', $scope.vm)
+      $scope.$emit('task:added', $scope.vm)
     })
   }
 }

@@ -1,3 +1,10 @@
+.dashboard > .toolbar,
+.project-board > .toolbar {
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
 .dashboard-lanes {
   height: 100%;
 }
@@ -5,4 +12,43 @@
 .dashboard-lane {
   border: 1px solid grey;
   height: 100%
+}
+
+.task-card {
+  border: 1px solid DimGray;
+  border-radius: 5px;
+  background-color: GhostWhite;
+  min-height: 80px;
+  max-height: 160px;
+  padding: 5px;
+}
+
+.task-card > .body {
+  font-size: 14px;
+}
+
+.task-card > .footer {
+  visibility: hidden;
+}
+
+.task-card:hover > .footer {
+  visibility: visible;
+}
+
+.task-card > .option {
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.button-icon {
+  margin-right: 5px;
+}
+
+.row-flex, .row-flex > div[class*='col-'] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex:1 1 auto;
 }

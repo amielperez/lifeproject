@@ -1,5 +1,5 @@
 {
-  "name": "driven",
+  "name": "lifeproject",
   "version": "1.0.0",
   "description": "試験のために計画です。",
   "main": "gulfpile.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amielperez/driven.git"
+    "url": "git+https://github.com/amielperez/lifeproject.git"
   },
   "author": "Amiel L Perez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amielperez/driven/issues"
+    "url": "https://github.com/amielperez/lifeproject/issues"
   },
-  "homepage": "https://github.com/amielperez/driven#readme",
+  "homepage": "https://github.com/amielperez/lifeproject#readme",
   "dependencies": {
     "angular": "latest",
     "angular-environment": "^1.0.8",

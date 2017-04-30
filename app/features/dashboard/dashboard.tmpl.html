@@ -1,16 +1,12 @@
-<div>
+<div class="dashboard">
+  <div class="toolbar">
+    <button type="button" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus button-icon"></span>Add Project
+    </button>
+  </div>
   <uib-tabset active="active">
-    <uib-tab index="0" heading="Default project">
-      <div class="row dashboard-lanes">
-        <div class="col-sm-4 dashboard-lane">
-          <h1 style="{color:red}">{{ message }}</h1>
-          <task vm='task' ng-repeat="task in tasks"></task>
-        </div>
-        <div class="col-sm-4 dashboard-lane">
-        </div>
-        <div class="col-sm-4 dashboard-lane">
-        </div>
-      </div>
+    <uib-tab index="$index" ng-repeat="project in projects" heading="{{ project.name }}">
+      <project-board vm='project'></project-board>
     </uib-tab>
   </uib>
 </div>

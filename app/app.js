@@ -9,7 +9,7 @@ require('angular-ui-bootstrap');
 require('angular-resource');
 
 var app = angular.module(
-  'driven',
+  'lifeProject',
   [
     'environment',
     'ui.bootstrap',

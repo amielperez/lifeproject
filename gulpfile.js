@@ -47,8 +47,13 @@ gulp.task('watch', ['lint'], () => {
 });
 
 gulp.task('styles', () => {
-  return gulp.src(['app/styles/*.css'])
+  return gulp.src(['app/styles/*.css', 'app/styles/vendor/*.css'])
     .pipe(gulp.dest('dist/assets/styles'))
+})
+
+gulp.task('fonts', () => {
+  return gulp.src(['app/fonts/*', 'app/fonts/vendor/*.css'])
+    .pipe(gulp.dest('dist/assets/fonts'))
 })
 
 gulp.task('lint', () => {
