@@ -1,21 +1,27 @@
 <div class="project-board">
-  <div class="toolbar">
+  <div class="project-board__toolbar">
     <button type="button" class="btn btn-primary" ng-click="onAddTask()">
-      <span class="glyphicon glyphicon-plus button-icon"></span>Add Task
+      <span class="glyphicon glyphicon-plus button-icon"></span>New Task
     </button>
   </div>
-  <div class="row dashboard-lanes">
-    <div class="col-sm-4 dashboard-lane">
+  <div class="row project-board__lanes">
+    <div class="col-sm-4 project-board__lane">
       <h4>To-do</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['todo'] track by $index"></task>
+      <div class="project-board__lane-content">
+        <task vm='task' ng-repeat="task in tasksByStatus['todo'] track by $index"></task>
+      </div>
     </div>
-    <div class="col-sm-4 dashboard-lane">
+    <div class="col-sm-4 project-board__lane">
       <h4>WIP</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['wip'] track by $index"></task>
+      <div class="project-board__lane-content">
+        <task vm='task' ng-repeat="task in tasksByStatus['wip'] track by $index"></task>
+      </div>
     </div>
-    <div class="col-sm-4 dashboard-lane">
+    <div class="col-sm-4 project-board__lane">
       <h4>Done</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['done'] track by $index"></task>
+      <div class="project-board__lane-content">
+        <task vm='task' ng-repeat="task in tasksByStatus['done'] track by $index"></task>
+      </div>
     </div>
   </div>
 </div>

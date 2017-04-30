@@ -1,17 +1,32 @@
-.dashboard > .toolbar,
-.project-board > .toolbar {
+.dashboard__toolbar {
   display: inline-block;
   margin-bottom: 15px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
-.dashboard-lanes {
+.dashboard__projects {
+  margin: 15px;
+}
+
+.project-board__toolbar {
+  display: inline-block;
+  margin: 15px;
+}
+
+.project-board__lanes {
+  height: 100%;
+  border-top: 1px solid LightGrey;
+  margin: 0 15px;
+}
+
+.project-board__lane {
   height: 100%;
 }
 
-.dashboard-lane {
-  border: 1px solid grey;
-  height: 100%
+.project-board__lane-content {
+  background-color: WhiteSmoke;
+  height: 100%;
+  padding: 10px 10px;
 }
 
 .modal-form {

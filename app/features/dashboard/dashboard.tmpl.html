@@ -1,12 +1,14 @@
 <div class="dashboard">
-  <div class="toolbar">
+  <div class="dashboard__toolbar">
     <button type="button" class="btn btn-primary" ng-click="addProject()">
-      <span class="glyphicon glyphicon-plus button-icon"></span>Add Project
+      <span class="glyphicon glyphicon-plus button-icon"></span>New Project
     </button>
   </div>
-  <uib-tabset active="active">
-    <uib-tab index="$index" ng-repeat="project in projects" heading="{{ project.name }}">
-      <project-board vm='project'></project-board>
-    </uib-tab>
-  </uib>
+  <div class="dashboard__projects">
+    <uib-tabset active="active">
+      <uib-tab index="$index" ng-repeat="project in projects" heading="{{ project.name }}">
+        <project-board vm='project'></project-board>
+      </uib-tab>
+    </uib>
+  </div>
 </div>
