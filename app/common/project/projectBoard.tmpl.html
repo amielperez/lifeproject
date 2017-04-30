@@ -7,15 +7,15 @@
   <div class="row dashboard-lanes">
     <div class="col-sm-4 dashboard-lane">
       <h4>To-do</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['todo'] track by task.id"></task>
+      <task vm='task' ng-repeat="task in tasksByStatus['todo'] track by $index"></task>
     </div>
     <div class="col-sm-4 dashboard-lane">
       <h4>WIP</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['wip'] track by task.id"></task>
+      <task vm='task' ng-repeat="task in tasksByStatus['wip'] track by $index"></task>
     </div>
     <div class="col-sm-4 dashboard-lane">
       <h4>Done</h4>
-      <task vm='task' ng-repeat="task in tasksByStatus['done'] track by task.id"></task>
+      <task vm='task' ng-repeat="task in tasksByStatus['done'] track by $index"></task>
     </div>
   </div>
 </div>

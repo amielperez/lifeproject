@@ -1,7 +1,7 @@
-<div class="task-card">
+<div ng-class="{ 'task-card': true, 'task-card--complete': completed }">
   <div class="body">
     <span>{{ vm.summary }}</span>
-    <span class="glyphicon glyphicon-check" ng-if="highlightCompletion"></span>
+    <span class="glyphicon glyphicon-check" ng-if="completed"></span>
   </div>
   <div class="footer row-flex">
     <!-- TODO: apply Jason's advice of preventing default via CSS -->

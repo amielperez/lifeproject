@@ -22,9 +22,15 @@
   border: 1px solid DimGray;
   border-radius: 5px;
   background-color: GhostWhite;
+  margin: 5px 0;
   min-height: 80px;
   max-height: 160px;
   padding: 5px;
+  position: relative;
+}
+
+.task-card--complete {
+  background-color: LightGreen;
 }
 
 .task-card > .body {
@@ -32,7 +38,12 @@
 }
 
 .task-card > .footer {
+  bottom: 0;
+  font-size: 20px;
+  margin-bottom: 5px;
+  position: absolute;
   visibility: hidden;
+  width: 100%
 }
 
 .task-card:hover > .footer {
@@ -54,5 +65,6 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex:1 1 auto;
+  flex: 1 1 auto;
+  justify-content: center;
 }

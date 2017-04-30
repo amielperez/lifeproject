@@ -22,6 +22,13 @@ var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) 
       delete $scope.newProject
       // TODO: Add a boostrap alert by emission
       console.log("added project", newProject)
+      // One-time bind to wait for when projects get digested
+      // then change to the last tab
+      $scope.$watch('::projects', (newVal, oldVal, scope) => {
+        console.log("current active", $scope.active)
+        console.log("to be new active", $scope.projects.length - 1)
+        $scope.active = $scope.projects.length - 1
+      }, true)
     })
   }
 }
