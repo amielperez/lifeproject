@@ -32,25 +32,22 @@ var ProjectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
     }
   }
 
+  var modalInstance
   $scope.openModal = () => {
     $scope.newTask = {}
     $scope.taskProject = $scope.vm
 
-    var modalInstance = $uibModal.open({
+    modalInstance = $uibModal.open({
       animation: true,
       template: "<div class='modal-form'><add-task vm='newTask' vmproject='taskProject'></add-task></div>",
       scope: $scope
     });
-
-    $scope.$on('task:added', (event, newTask) => {
-      modalInstance.close(newTask)
-      $scope.tasks.push(newTask)
-    })
-
-    $scope.$on('task:formDismissed', () => {
-      modalInstance.close(newTask)
-    })
   }
+
+  $scope.$on('task:added', (event, newTask) => {
+    modalInstance.close(newTask)
+    $scope.tasks.push(newTask)
+  })
 
   $scope.$on('task:delete', (event, task) => {
     $scope.tasks.splice($scope.tasks.indexOf(task), 1)

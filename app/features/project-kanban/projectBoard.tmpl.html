@@ -1,6 +1,6 @@
 <div class="project-board">
   <div class="project-board__toolbar">
-    <button type="button" class="btn btn-primary" ng-click="onAddTask()">
+    <button type="button" class="btn btn-primary" ng-click="addTask()">
       <span class="glyphicon glyphicon-plus button-icon"></span>New Task
     </button>
   </div>
@@ -8,7 +8,9 @@
     <div class="col-sm-4 project-board__lane" ng-repeat="status in vm.statuses">
       <h4>{{ status.name }}</h4>
       <div class="project-board__lane-content">
-        <task vm='task' vmproject='vm' ng-repeat="task in getTasksByStatus(status.name) track by $index"></task>
+        <div ng-repeat="task in getTasksByStatus(status.name) track by task.id">
+          <task vm='task' vmproject='vm'></task>
+        </div>
       </div>
     </div>
   </div>

@@ -8,27 +8,28 @@ var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) 
     $scope.openModal(...arguments)
   }
 
+  var modalInstance
   $scope.openModal = () => {
     $scope.newProject = {}
 
-    var modalInstance = $uibModal.open({
+    modalInstance = $uibModal.open({
       animation: true,
       template: "<div class='modal-form'><add-project vm='newProject'></add-project></div>",
       scope: $scope
     });
-
-    $scope.$on('project:added', (event, newProject) => {
-      modalInstance.close(newProject)
-      $scope.projects.push(newProject)
-      delete $scope.newProject
-      $scope.addDashboardAlert(`Project "${newProject.name}" successfully created.`, 'success')
-      // One-time bind to wait for when projects get digested
-      // That is the only time the last tab (new tab) will be activated
-      $scope.$watch('::projects', (newVal, oldVal, scope) => {
-        $scope.active = $scope.projects.length - 1
-      }, true)
-    })
   }
+
+  $scope.$on('project:added', (event, newProject) => {
+    modalInstance.close(newProject)
+    $scope.projects.push(newProject)
+    delete $scope.newProject
+    $scope.addDashboardAlert(`Project "${newProject.name}" successfully created.`, 'success')
+    // One-time bind to wait for when projects get digested
+    // That is the only time the last tab (new tab) will be activated
+    $scope.$watch('::projects', (newVal, oldVal, scope) => {
+      $scope.active = $scope.projects.length - 1
+    }, true)
+  })
 
   $scope.$on('task:added', (event, task) => {
     $scope.addDashboardAlert(`Task "${task.summary}" successfully created.`, 'success')
