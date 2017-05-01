@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
     lint = require('gulp-eslint'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    KarmaServer = require('karma').Server;
 
 
 var embedlr = require('gulp-embedlr'),
@@ -78,3 +79,10 @@ gulp.task('dev', () => {
   server.listen(serverPort)
   gulp.run('watch')
 });
+
+
+gulp.task('test', (done) => {
+  var server = new KarmaServer({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start()
+})

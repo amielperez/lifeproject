@@ -20,10 +20,12 @@
   "dependencies": {
     "angular": "latest",
     "angular-environment": "^1.0.8",
+    "angular-mocks": "^1.6.4",
     "angular-resource": "^1.6.4",
     "angular-ui-bootstrap": "^2.5.0",
     "bootstrap": "^3.3.7",
-    "browserify": "latest",
+    "brfs": "^1.4.3",
+    "browserify": "^14.3.0",
     "connect-livereload": "latest",
     "express": "latest",
     "gulp": "latest",
@@ -31,14 +33,27 @@
     "gulp-concat": "^2.6.1",
     "gulp-embedlr": "latest",
     "gulp-eslint": "^3.0.1",
+    "gulp-jasmine": "^2.4.2",
     "gulp-livereload": "latest",
     "gulp-sass": "^3.1.0",
     "gulp-util": "latest",
+    "jasmine": "^2.6.0",
+    "karma": "^1.6.0",
+    "karma-browserify": "^5.1.1",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.31",
     "rsvp": "^3.5.0",
     "tiny-lr": "latest",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
   },
-  "eslintConfig": "eslint.json"
+  "eslintConfig": "eslint.json",
+  "devDependencies": {
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine-html-reporter": "^0.2.2"
+  }
 }
