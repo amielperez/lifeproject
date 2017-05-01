@@ -1,6 +1,10 @@
 ## LifeProject
 This is a demo project where I applied what I have learned studying AngularJS so far.
 
+### Requirements
+1. node
+2. npm
+
 ### Installation
 Since this is still a work-in-progress, the current installation steps is a bit lengthy:
 
