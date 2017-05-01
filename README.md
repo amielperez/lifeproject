@@ -26,6 +26,7 @@ Since this is still a work-in-progress, the current installation steps is a bit 
 
 If you know Rails, you can check out another [repository](https://github.com/amielperez/lifeproject-api) that I wrote that is immediately compatible with this project
 
+#### Creating your own backend
 If you want to create your own backend, that's also all right, as long as the backend has the following endpoints:
 
 ```
@@ -65,7 +66,7 @@ Returns all tasks of a given project identified by the `project_id` query param.
   summary: string, // Summary
   description: string, // Description
   status_id: integer, // id of the status this task is in. This must match the `statuses` property of the project (see above)
-  status_name: status.name, // name of the status this task is in. This must match the `statuses` property of the project (see above)
+  status_name: string, // name of the status this task is in. This must match the `statuses` property of the project (see above)
   project_id: project_id // project id. This must match the `id` property of the project this task belongs to
 }
 ```
