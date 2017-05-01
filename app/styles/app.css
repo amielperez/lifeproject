@@ -24,7 +24,7 @@
 }
 
 .project-board__lane-content {
-  background-color: WhiteSmoke;
+  background-color: gainsboro;
   height: 100%;
   padding: 10px 10px;
 }
@@ -34,25 +34,44 @@
 }
 
 .task-card {
-  border: 1px solid DimGray;
+  border: 1px solid lightgrey;
   border-radius: 5px;
-  background-color: GhostWhite;
+  background-color: white;
+  color: black;
   margin: 5px 0;
-  min-height: 80px;
-  max-height: 160px;
+  height: 140px;
+  max-width: 160px;
   padding: 5px;
   position: relative;
 }
 
-.task-card--complete {
-  background-color: LightGreen;
+.task-card:not(.task-card--complete):hover {
+  background-color: #c4f0fb;
+  border: 1px solid lightskyblue;
 }
 
-.task-card > .body {
+.task-card--complete {
+  background-color: palegreen;
+  border: 1px solid mediumseagreen;
+}
+
+.task-card__body {
   font-size: 14px;
 }
 
-.task-card > .footer {
+.task-card__desc {
+  font-size: 10px;
+  color: dimgrey;
+  margin-top: 10px;
+  overflow: none;
+  text-overflow: ellipsis;
+}
+
+.task-card--complete > .task-card__desc {
+  color: black;
+}
+
+.task-card__footer {
   bottom: 0;
   font-size: 20px;
   margin-bottom: 5px;
@@ -61,7 +80,7 @@
   width: 100%
 }
 
-.task-card:hover > .footer {
+.task-card:hover > .task-card__footer {
   visibility: visible;
 }
 
@@ -70,8 +89,17 @@
   margin: 0 5px;
 }
 
+.header-icon,
 .button-icon {
   margin-right: 5px;
+}
+
+.inline-icon {
+  margin: 0 5px;
+}
+
+.inline-icon--completed {
+  color: seagreen;
 }
 
 .row-flex, .row-flex > div[class*='col-'] {
