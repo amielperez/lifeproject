@@ -1,6 +1,7 @@
 'use strict'
 
 var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) => {
+  $scope.dashboardAlerts = []
   $scope.projects = projectFactory.query();
 
   $scope.addProject = () => {
@@ -20,8 +21,7 @@ var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) 
       modalInstance.close(newProject)
       $scope.projects.push(newProject)
       delete $scope.newProject
-      // TODO: Add a boostrap alert by emission
-      console.log("added project", newProject)
+      $scope.addDashboardAlert(`Project "${newProject.name}" successfully created.`, 'success')
       // One-time bind to wait for when projects get digested
       // then change to the last tab
       $scope.$watch('::projects', (newVal, oldVal, scope) => {
@@ -30,6 +30,19 @@ var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) 
         $scope.active = $scope.projects.length - 1
       }, true)
     })
+  }
+
+  $scope.$on('task:added', (event, task) => {
+    $scope.addDashboardAlert(`Task "${task.summary}" successfully created.`, 'success')
+  })
+
+  $scope.addDashboardAlert = (message, type) => {
+    type = type || 'info'
+    $scope.dashboardAlerts.push({ message: message, type: type })
+  }
+
+  $scope.closeDashboardAlert = (index) => {
+    $scope.dashboardAlerts.splice(index, 1)
   }
 }
 

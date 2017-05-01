@@ -14,20 +14,20 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
   // TODO: maybe replace with a watcher
   $scope.sortTasks = () => {
     delete $scope.tasksByStatus
-    $scope.tasksByStatus = {
-      'todo': [], 'wip': [], 'done': []
-    }
-    console.log(`counting tasks for ${$scope.vm.name}`)
+    $scope.tasksByStatus = {}
     _.each($scope.tasks, (task) => {
-      console.log(`found task for ${$scope.vm.id} ${$scope.vm.name}`)
-      if(task['status_id'] === 0){
-        $scope.tasksByStatus['todo'].push(task)
-      }else if(task['status_id'] === 1){
-        $scope.tasksByStatus['wip'].push(task)
-      }else if(task['status_id'] === 2){
-        $scope.tasksByStatus['done'].push(task)
+      var statusName = task['status_name']
+      if(!$scope.tasksByStatus[statusName]){
+        $scope.tasksByStatus[statusName] = []
       }
+      $scope.tasksByStatus[statusName].push(task)
     })
+  }
+
+  $scope.getTasksByStatus = (status) => {
+    if($scope.tasksByStatus){
+      return $scope.tasksByStatus[status]
+    }
   }
 
   $scope.openModal = () => {
@@ -46,7 +46,6 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
       console.log("added task", newTask)
       console.log($scope.tasks)
       $scope.sortTasks()
-      // TODO: Add a boostrap alert by emission
     })
 
     $scope.$on('task:formDismissed', () => {
@@ -72,7 +71,8 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
   // to be able to take care of itself
   // However, probably do this when you've cleaned up the status codes hardcoding
   $scope.updateTask = (task) => {
-    taskFactory.update(task, () => {
+    task.$update((res) => {
+      console.log(res)
       $scope.sortTasks()
     })
   }
