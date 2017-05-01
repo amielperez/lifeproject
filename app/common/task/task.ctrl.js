@@ -3,10 +3,10 @@
 var _ = require('underscore')
 
 var taskCtrl = ($scope) => {
-  $scope.canBacktrack = !$scope.vm['is_start'] && !$scope.vm['is_complete']
-  $scope.canProgress = !$scope.vm['is_complete']
-  $scope.canDelete = !$scope.vm['is_complete']
-  $scope.completed = $scope.vm['is_complete']
+  $scope.completed = $scope.vm['status_id'] === $scope.vmproject['ending_status'].id
+  $scope.canDelete = !$scope.completed
+  $scope.canProgress = !$scope.completed
+  $scope.canBacktrack = $scope.vm['status_id'] !== $scope.vmproject['starting_status'].id && !$scope.completed
 
   $scope.canArchive = true
   $scope.progress = () => {

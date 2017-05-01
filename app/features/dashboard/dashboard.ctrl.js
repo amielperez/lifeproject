@@ -23,10 +23,8 @@ var DashboardCtrl = ($scope, $rootScope, $uibModal, envService, projectFactory) 
       delete $scope.newProject
       $scope.addDashboardAlert(`Project "${newProject.name}" successfully created.`, 'success')
       // One-time bind to wait for when projects get digested
-      // then change to the last tab
+      // That is the only time the last tab (new tab) will be activated
       $scope.$watch('::projects', (newVal, oldVal, scope) => {
-        console.log("current active", $scope.active)
-        console.log("to be new active", $scope.projects.length - 1)
         $scope.active = $scope.projects.length - 1
       }, true)
     })

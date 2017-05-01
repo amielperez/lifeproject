@@ -1,7 +1,5 @@
 'use strict';
 
-// TODO: can i create an 'index.js' under every feature and export everything as one?
-// TODO: then register every component automagically?
 var dashboardCtrl = require('../features/dashboard/dashboard.ctrl');
 var dashboard = require('../features/dashboard/dashboard.dir')
 
@@ -16,14 +14,12 @@ var addTaskCtrl = require('../features/add-task/addTask.ctrl')
 var addTask = require('../features/add-task/addTask.dir')
 
 var projectFactory = require('../common/project/project.fact')
-var projectBoardCtrl = require('../common/project/projectBoard.ctrl')
-var projectBoard = require('../common/project/projectBoard.dir')
+var projectBoardCtrl = require('../features/project-kanban/projectBoard.ctrl')
+var projectBoard = require('../features/project-kanban/projectBoard.dir')
 
 var addProject = require('../features/add-project/addProject.dir')
 var addProjectCtrl = require('../features/add-project/addProject.ctrl')
 
-// TODO: checkout gulp-ng-annotate and this article https://github.com/mgol/grunt-ng-annotate
-// TODO: to DRY up these injections
 var registerToApp = (app) => {
   app.controller('dashboardCtrl', ['$scope', '$rootScope', '$uibModal', 'envService', 'projectFactory', dashboardCtrl])
   app.directive('dashboard', [dashboard])

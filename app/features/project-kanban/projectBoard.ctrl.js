@@ -4,15 +4,17 @@ var _ = require('underscore')
 var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
   taskFactory.query({ project_id: $scope.vm.id }, (result) => {
     $scope.tasks = result
-    $scope.sortTasks()
   })
 
   $scope.onAddTask = () => {
     $scope.openModal(...arguments)
   }
 
-  // TODO: maybe replace with a watcher
-  $scope.sortTasks = () => {
+  $scope.$watch('tasks', () => {
+    sortTasks()
+  }, true)
+
+  var sortTasks = () => {
     delete $scope.tasksByStatus
     $scope.tasksByStatus = {}
     _.each($scope.tasks, (task) => {
@@ -43,9 +45,6 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
     $scope.$on('task:added', (event, newTask) => {
       modalInstance.close(newTask)
       $scope.tasks.push(newTask)
-      console.log("added task", newTask)
-      console.log($scope.tasks)
-      $scope.sortTasks()
     })
 
     $scope.$on('task:formDismissed', () => {
@@ -53,17 +52,8 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
     })
   }
 
-  $scope.$on('task:progress', (event, task) => {
-    $scope.sortTasks()
-  })
-
-  $scope.$on('task:backtrack', (event, task) => {
-    $scope.sortTasks()
-  })
-
   $scope.$on('task:delete', (event, task) => {
     $scope.tasks.splice($scope.tasks.indexOf(task), 1)
-    $scope.sortTasks()
   })
 }
 

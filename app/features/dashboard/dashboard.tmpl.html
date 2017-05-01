@@ -2,7 +2,7 @@
   <div uib-alert
     ng-repeat="alert in dashboardAlerts"
     ng-class="'alert-' + alert.type"
-    dismiss-on-timeout="2500"
+    dismiss-on-timeout="3000"
     close="closeDashboardAlert($index)">{{alert.message}}</div>
   <div class="dashboard__toolbar">
     <button type="button" class="btn btn-primary" ng-click="addProject()">
