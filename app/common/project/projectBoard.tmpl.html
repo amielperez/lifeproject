@@ -8,7 +8,7 @@
     <div class="col-sm-4 project-board__lane" ng-repeat="status in vm.statuses">
       <h4>{{ status.name }}</h4>
       <div class="project-board__lane-content">
-        <task vm='task' ng-repeat="task in getTasksByStatus(status.name) track by $index"></task>
+        <task vm='task' vmproject='vm' ng-repeat="task in getTasksByStatus(status.name) track by $index"></task>
       </div>
     </div>
   </div>

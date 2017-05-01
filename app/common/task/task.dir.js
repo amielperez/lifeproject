@@ -3,7 +3,8 @@
 var task = () => {
   return {
     scope: {
-      vm: '='
+      vm: '=',
+      vmproject: '='
     },
     templateUrl: '/assets/html/common/task/task.tmpl.html',
     controller: 'taskCtrl'

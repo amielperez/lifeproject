@@ -7,14 +7,13 @@
     </div>
   </div>
   <div class="task-card__footer row-flex">
-    <!-- TODO: apply Jason's advice of preventing default via CSS -->
-    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onBacktrack(vm)">
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); backtrack(vm)">
       <span class="glyphicon glyphicon-chevron-left" ng-if="canBacktrack"></span>
     </a>
-    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onDelete(vm)">
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); delete(vm)">
       <span class="glyphicon glyphicon-trash" ng-if="canDelete"></span>
     </a>
-    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); onProgress(vm)">
+    <a class="action" href="javascript:void(0);" ng-click="e.preventDefault(); progress(vm)">
       <span class="glyphicon glyphicon-chevron-right" ng-if="canProgress"></span>
     </a>
   </div>

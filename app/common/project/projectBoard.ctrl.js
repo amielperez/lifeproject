@@ -53,44 +53,17 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
     })
   }
 
-  $scope.progress = (task) => {
-    if(task['status_id'] < 2){
-      task['status_id']++
-      $scope.updateTask(task)
-    }
-  }
-
-  $scope.backtrack = (task) => {
-    if(task['status_id'] > 0) {
-      task['status_id']--
-      $scope.updateTask(task)
-    }
-  }
-
-  // TODO: Move updating the task to itself because a task needs
-  // to be able to take care of itself
-  // However, probably do this when you've cleaned up the status codes hardcoding
-  $scope.updateTask = (task) => {
-    task.$update((res) => {
-      console.log(res)
-      $scope.sortTasks()
-    })
-  }
-
   $scope.$on('task:progress', (event, task) => {
-    $scope.progress(task)
+    $scope.sortTasks()
   })
 
   $scope.$on('task:backtrack', (event, task) => {
-    $scope.backtrack(task)
+    $scope.sortTasks()
   })
 
   $scope.$on('task:delete', (event, task) => {
-    task['deleted'] = true
-    taskFactory.update(task, () => {
-      $scope.tasks.splice($scope.tasks.indexOf(task), 1)
-      $scope.sortTasks()
-    })
+    $scope.tasks.splice($scope.tasks.indexOf(task), 1)
+    $scope.sortTasks()
   })
 }
 
