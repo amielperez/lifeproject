@@ -7,23 +7,13 @@ var gulp = require('gulp'),
     sass = require('gulp-sass');
 
 
-// TODO: externalize
-// configure server
 var embedlr = require('gulp-embedlr'),
   express = require('express');
   serverPort = 5000;
   path = require('path');
 
-// TODO: externalize
-// configure live reload server
-var refresh = require('gulp-livereload'),
-  lrServer = require('tiny-lr')(),
-  liveReload = require('connect-livereload');
-  liveReloadPort = 5001;
-
 
 var server = express();
-server.use(liveReload({ port: liveReloadPort }));
 server.use(express.static('/dist'));
 server.use('/assets', express.static(path.join(__dirname + '/dist/assets')));
 server.all('/', (req, res) => {
@@ -86,6 +76,5 @@ gulp.task('views', () => {
 
 gulp.task('dev', () => {
   server.listen(serverPort)
-  lrServer.listen(liveReloadPort)
   gulp.run('watch')
 });
