@@ -1,4 +1,4 @@
-### LifeProject
+## LifeProject
 This is a demo project where I applied what I have learned studying AngularJS so far.
 
 ### Installation
