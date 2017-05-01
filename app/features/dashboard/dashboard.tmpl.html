@@ -1,4 +1,9 @@
 <div class="dashboard">
+  <div uib-alert
+    ng-repeat="alert in dashboardAlerts"
+    ng-class="'alert-' + alert.type"
+    dismiss-on-timeout="2500"
+    close="closeDashboardAlert($index)">{{alert.message}}</div>
   <div class="dashboard__toolbar">
     <button type="button" class="btn btn-primary" ng-click="addProject()">
       <span class="glyphicon glyphicon-plus button-icon"></span>New Project

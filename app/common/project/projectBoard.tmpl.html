@@ -5,22 +5,10 @@
     </button>
   </div>
   <div class="row project-board__lanes">
-    <div class="col-sm-4 project-board__lane">
-      <h4>To-do</h4>
+    <div class="col-sm-4 project-board__lane" ng-repeat="status in vm.statuses">
+      <h4>{{ status.name }}</h4>
       <div class="project-board__lane-content">
-        <task vm='task' ng-repeat="task in tasksByStatus['todo'] track by $index"></task>
-      </div>
-    </div>
-    <div class="col-sm-4 project-board__lane">
-      <h4>WIP</h4>
-      <div class="project-board__lane-content">
-        <task vm='task' ng-repeat="task in tasksByStatus['wip'] track by $index"></task>
-      </div>
-    </div>
-    <div class="col-sm-4 project-board__lane">
-      <h4>Done</h4>
-      <div class="project-board__lane-content">
-        <task vm='task' ng-repeat="task in tasksByStatus['done'] track by $index"></task>
+        <task vm='task' ng-repeat="task in getTasksByStatus(status.name) track by $index"></task>
       </div>
     </div>
   </div>
