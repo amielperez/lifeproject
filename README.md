@@ -6,7 +6,7 @@ This is a demo project where I applied what I have learned studying AngularJS so
 2. npm
 
 ### Installation
-Since this is still a work-in-progress, the current installation steps is a bit lengthy:
+Since this is still a work-in-progress, the current installation process requires some manual steps:
 
 1. Clone this repo, then `cd` to the root directory
 2. Run `npm install` to install dependencies
