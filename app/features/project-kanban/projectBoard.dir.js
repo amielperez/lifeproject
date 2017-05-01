@@ -2,7 +2,7 @@
 
 var projectBoard = () => {
   return {
-    templateUrl: '/assets/html/common/project/projectBoard.tmpl.html',
+    templateUrl: '/assets/html/features/project-kanban/projectBoard.tmpl.html',
     scope: {
       vm: '='
     },
