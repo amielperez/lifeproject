@@ -2,7 +2,7 @@
 
 var addProject = () => {
   return {
-    controller: 'addProjectCtrl',
+    controller: 'AddProjectCtrl',
     templateUrl: '/assets/html/features/add-project/addProject.tmpl.html',
     scope: {
       vm: '='

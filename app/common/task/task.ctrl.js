@@ -2,7 +2,7 @@
 
 var _ = require('underscore')
 
-var taskCtrl = ($scope) => {
+var TaskCtrl = ($scope) => {
   $scope.completed = $scope.vm['status_id'] === $scope.vmproject['ending_status'].id
   $scope.canDelete = !$scope.completed
   $scope.canProgress = !$scope.completed
@@ -49,4 +49,4 @@ var taskCtrl = ($scope) => {
   }
 }
 
-module.exports = taskCtrl;
+module.exports = TaskCtrl;

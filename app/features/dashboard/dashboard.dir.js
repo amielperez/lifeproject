@@ -2,7 +2,7 @@
 
 var dashboard = () => {
   return {
-    controller: 'dashboardCtrl',
+    controller: 'DashboardCtrl',
     templateUrl: '/assets/html/features/dashboard/dashboard.tmpl.html'
   }
 };

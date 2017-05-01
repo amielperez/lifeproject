@@ -7,7 +7,7 @@ var task = () => {
       vmproject: '='
     },
     templateUrl: '/assets/html/common/task/task.tmpl.html',
-    controller: 'taskCtrl'
+    controller: 'TaskCtrl'
   }
 }
 

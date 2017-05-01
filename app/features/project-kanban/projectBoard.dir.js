@@ -6,7 +6,7 @@ var projectBoard = () => {
     scope: {
       vm: '='
     },
-    controller: 'projectBoardCtrl'
+    controller: 'ProjectBoardCtrl'
   }
 }
 

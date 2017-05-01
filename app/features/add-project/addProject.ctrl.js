@@ -1,7 +1,6 @@
 'use strict';
 
-var addProjectCtrl = ($scope, projectFactory) => {
-  console.log($scope)
+var AddProjectCtrl = ($scope, projectFactory) => {
   $scope.saveProject = () => {
     projectFactory.save($scope.vm).$promise.then((savedResource) => {
       $scope.$emit('project:added', savedResource)
@@ -9,4 +8,4 @@ var addProjectCtrl = ($scope, projectFactory) => {
   }
 }
 
-module.exports = addProjectCtrl;
+module.exports = AddProjectCtrl;

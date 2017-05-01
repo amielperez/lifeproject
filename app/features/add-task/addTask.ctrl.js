@@ -1,6 +1,6 @@
 'use strict';
 
-var addTaskCtrl = ($scope, $rootScope, taskFactory) => {
+var AddTaskCtrl = ($scope, $rootScope, taskFactory) => {
   $scope.vm['project_id'] = $scope.vmproject.id
   $scope.saveTask = () => {
     taskFactory.save($scope.vm).$promise.then((savedResource) => {
@@ -9,4 +9,4 @@ var addTaskCtrl = ($scope, $rootScope, taskFactory) => {
   }
 }
 
-module.exports = addTaskCtrl;
+module.exports = AddTaskCtrl;

@@ -1,12 +1,12 @@
 'use strict';
 
 var _ = require('underscore')
-var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
+var ProjectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
   taskFactory.query({ project_id: $scope.vm.id }, (result) => {
     $scope.tasks = result
   })
 
-  $scope.onAddTask = () => {
+  $scope.addTask = () => {
     $scope.openModal(...arguments)
   }
 
@@ -57,4 +57,4 @@ var projectBoardCtrl = ($scope, $rootScope, $uibModal, taskFactory) => {
   })
 }
 
-module.exports = projectBoardCtrl;
+module.exports = ProjectBoardCtrl;

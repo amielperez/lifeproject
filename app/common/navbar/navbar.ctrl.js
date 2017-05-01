@@ -1,6 +1,6 @@
 'use strict';
 
-var navbarCtrl = ($scope, $rootScope) => {
+var NavbarCtrl = ($scope, $rootScope) => {
 }
 
-module.exports = navbarCtrl;
+module.exports = NavbarCtrl;
